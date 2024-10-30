@@ -7,6 +7,16 @@ import type { Image } from 'sanity'
 
 import ImageBox from '@/components/shared/ImageBox'
 
+import { AccordionBlock } from './AccordionBlock'
+import { CtaBlock } from './CtaBlock'
+import { FullWidthContentBlock } from './FullWidthContentBlock'
+import GenericHeaderBlock from './GenericHeaderBlock'
+import { MorphologyBlock } from './MorphologyBlock'
+import { PairingBlock } from './PairingBlock'
+import LogoBlock from './LogoBlock'
+import TextBlock from './TextBlock'
+import { TwoColContentBlock } from './TwoColContentBlock'
+
 export function CustomPortableText({
   paragraphClasses,
   value,
@@ -46,14 +56,38 @@ export function CustomPortableText({
               alt={value.alt}
               classesWrapper="relative aspect-[16/9]"
             />
-            {value?.caption && (
-              <div className="font-sans text-sm text-gray-600">
-                {value.caption}
-              </div>
-            )}
+            {value?.caption && <div className="text-base">{value.caption}</div>}
           </div>
         )
       },
+      ctaBlock: ({ value }) => {
+        return <CtaBlock data={value} />
+      },
+      accordionBlock: ({ value }) => {
+        return <AccordionBlock data={value} />
+      },
+      twoColContentBlock: ({ value }) => {
+        return <TwoColContentBlock data={value} />
+      },
+      fullWidthContentBlock: ({ value }) => {
+        return <FullWidthContentBlock data={value} />
+      },
+      pairingBlock: ({ value }) => {
+        return <PairingBlock data={value} />
+      },
+      morphologyBlock: ({ value }) => {
+        return <MorphologyBlock data={value} />
+      },
+      textBlock: ({ value }) => {
+        return <TextBlock {...value} />
+      },
+      genericHeaderBlock: ({ value }) => {
+        return <GenericHeaderBlock {...value} />
+      },
+      logoBlock: ({ value }) => {
+        return <LogoBlock {...value} />
+      },
+     
     },
   }
 

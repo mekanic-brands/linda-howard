@@ -5,72 +5,77 @@ export default defineType({
   name: 'settings',
   title: 'Settings',
   type: 'document',
-  icon: CogIcon,
+  icon: CogIcon as any,
   // Uncomment below to have edits publish automatically as you type
   // liveEdit: true,
   fields: [
     defineField({
-      name: 'menuItems',
-      title: 'Menu Item list',
-      description: 'Links displayed on the header of your site.',
+      name: 'logo',
+      title: 'Logo',
+      description: '',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'ogImage',
+      title: 'Og Image',
+      description: '',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'mediaContact',
+      title: 'Media Contact',
+      description: '',
+      type: 'text',
+    }),
+    defineField({
+      name: 'email',
+      title: 'Email',
+      description: '',
+      type: 'string',
+    }),
+    defineField({
+      name: 'socialNetworks',
+      title: 'Social Networks',
+      description: 'List of social network icons and links',
       type: 'array',
       of: [
         {
-          title: 'Reference',
-          type: 'reference',
-          to: [
+          type: 'object',
+          fields: [
             {
-              type: 'home',
+              name: 'icon',
+              title: 'Icon',
+              type: 'image',
+              options: {
+                hotspot: true,
+              },  
             },
             {
-              type: 'page',
+              name: 'link',
+              title: 'Link',
+              type: 'url',
             },
           ],
         },
       ],
     }),
     defineField({
-      name: 'footer',
-      description:
-        'This is a block of text that will be displayed at the bottom of the page.',
-      title: 'Footer Info',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'block',
-          marks: {
-            annotations: [
-              {
-                name: 'link',
-                type: 'object',
-                title: 'Link',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'Url',
-                  },
-                ],
-              },
-            ],
-          },
-        }),
-      ],
-    }),
-    defineField({
-      name: 'ogImage',
-      title: 'Open Graph Image',
-      type: 'image',
-      description: 'Displayed on social cards and search engine results.',
-      options: {
-        hotspot: true,
-      },
+      name: 'robots',
+      title: 'robots',
+      description: 'Robots.txt',
+      type: 'text',
     }),
   ],
   preview: {
     prepare() {
       return {
-        title: 'Menu Items',
+        title: 'Settings',
       }
     },
   },

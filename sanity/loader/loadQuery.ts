@@ -7,6 +7,7 @@ import { client } from '@/sanity/lib/client'
 import {
   homePageQuery,
   pagesBySlugQuery,
+  pagesQuery,
   settingsQuery,
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
@@ -81,5 +82,13 @@ export function loadPage(slug: string) {
     pagesBySlugQuery,
     { slug },
     { next: { tags: [`page:${slug}`] } },
+  )
+}
+
+export function loadPages() {
+  return loadQuery<PagePayload | null>(
+    pagesQuery,
+    {},
+    { next: { tags: [`pages`] } },
   )
 }

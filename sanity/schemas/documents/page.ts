@@ -5,6 +5,7 @@ export default defineType({
   type: 'document',
   name: 'page',
   title: 'Page',
+   //@ts-ignore
   icon: DocumentIcon,
   fields: [
     defineField({
@@ -24,8 +25,7 @@ export default defineType({
     }),
     defineField({
       name: 'overview',
-      description:
-        'Used for the <meta> description tag for SEO.',
+      description: 'Used for the <meta> description tag for SEO.',
       title: 'Overview',
       type: 'array',
       of: [
@@ -56,7 +56,7 @@ export default defineType({
       name: 'body',
       title: 'Body',
       description:
-        "This is where you can write the page's content, including custom blocks.",
+        "This is where you can write the page's content. Including custom blocks for more a more visual display of information.",
       of: [
         // Paragraphs
         defineArrayMember({
@@ -77,11 +77,48 @@ export default defineType({
               },
             ],
           },
-          styles: [],
+          styles: [
+            { title: 'Normal', value: 'normal' },
+            { title: 'H2', value: 'h2' },
+            { title: 'H3', value: 'h3' },
+          ],
         }),
         // Custom blocks
+        defineArrayMember({
+          name: 'genericHeaderBlock',
+          type: 'genericHeaderBlock',
+        }),
+        defineArrayMember({
+          name: 'fullWidthContentBlock',
+          type: 'fullWidthContentBlock',
+        }),
+        defineArrayMember({
+          name: 'pairingBlock',
+          type: 'pairingBlock',
+        }),
+        defineArrayMember({
+          name: 'morphologyBlock',
+          type: 'morphologyBlock',
+        }),
+        defineArrayMember({
+          name: 'textBlock',
+          type: 'textBlock',
+        }),
+        defineArrayMember({
+          name: 'accordionBlock',
+          type: 'accordionBlock',
+        }),
+        defineArrayMember({
+          name: 'twoColContentBlock',
+          type: 'twoColContentBlock',
+        }),
+        defineArrayMember({
+          name: 'logoBlock',
+          type: 'logoBlock',
+        }),
         defineField({
           type: 'image',
+          //@ts-ignore
           icon: ImageIcon,
           name: 'image',
           title: 'Image',

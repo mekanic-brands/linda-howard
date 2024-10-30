@@ -5,16 +5,45 @@ export const homePageQuery = groq`
     _id,
     overview,
     title,
+    body[]{
+      ...,
+      resources[]->{
+        title,
+        link,
+        isPopular,
+        categories[]->{
+          name,
+          "slug": slug.current,
+        }
+      }
+    }
   }
 `
 
 export const pagesBySlugQuery = groq`
   *[_type == "page" && slug.current == $slug][0] {
     _id,
-    body,
-    overview,
     title,
     "slug": slug.current,
+    body[]{
+      ...,
+ "marketListItems": *[_type == "marketListingItems"] {
+    state,
+    items[]{
+      profileName,
+      city,
+      stateCode,
+      zip
+        }
+      }
+    }
+  }
+`
+
+export const pagesQuery = groq`
+  *[_type == "page"]{
+    "slug": slug.current,
+    _updatedAt
   }
 `
 
@@ -27,5 +56,15 @@ export const settingsQuery = groq`
       title
     },
     ogImage,
+    evercrispAppleLogo,
+    footerLogo,
+    mobileLogo,
+    maiaInfo,
+    growersWebsite,
+    consumersEmail,
+    copyright,
+    robots,
+    socialNetworks,
+    ctaBlock,
   }
 `

@@ -1,5 +1,6 @@
 import '@/styles/index.css'
 
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata, Viewport } from 'next'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
@@ -8,6 +9,8 @@ import { Suspense } from 'react'
 
 import { Footer } from '@/components/global/Footer'
 import { Navbar } from '@/components/global/Navbar'
+import ThemeProvider from '@/components/provider/theme'
+import TopLoader from '@/components/shared/TopLoader'
 import { urlForOpenGraphImage } from '@/sanity/lib/utils'
 import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery'
 
@@ -26,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: homePage?.title
       ? {
           template: `%s | ${homePage.title}`,
-          default: homePage.title || 'Personal website',
+          default: homePage.title || 'Evercrisp Apple',
         }
       : undefined,
     description: homePage?.overview
@@ -47,20 +50,23 @@ export default async function IndexRoute({
 }: {
   children: React.ReactNode
 }) {
+  const initial = await loadSettings()
+
   return (
-    <>
-      <div className="flex min-h-screen flex-col bg-white text-black">
+    <ThemeProvider value={initial}>
+      <TopLoader />
+      <div className="min-h-screen" id="mainWrapper">
         <Suspense>
-          <Navbar />
+          <Navbar initial={initial} />
         </Suspense>
-        <div className="mt-20 flex-grow px-4 md:px-16 lg:px-32">
+        <div>
           <Suspense>{children}</Suspense>
         </div>
         <Suspense>
-          <Footer />
+          <Footer initial={initial} />
         </Suspense>
       </div>
       {draftMode().isEnabled && <LiveVisualEditing />}
-    </>
+    </ThemeProvider>
   )
 }

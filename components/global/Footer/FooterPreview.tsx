@@ -5,7 +5,7 @@ import { useSettings } from '@/sanity/loader/useQuery'
 import FooterLayout from './FooterLayout'
 
 type Props = {
-  initial: Parameters<typeof useSettings>[0]
+  initial: Parameters<typeof useSettings>[0] |  any
 }
 
 export default function NavbarPreview(props: Props) {

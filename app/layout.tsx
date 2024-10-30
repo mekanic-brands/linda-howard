@@ -1,24 +1,34 @@
 import './globals.css'
 
-import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
+import { Metadata, Viewport } from 'next'
+import { Literata, Montserrat } from 'next/font/google'
 
-const serif = PT_Serif({
-  variable: '--font-serif',
+const literata = Literata({
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
   style: ['normal', 'italic'],
-  subsets: ['latin'],
-  weight: ['400', '700'],
+  variable: '--font-literata',
 })
-const sans = Inter({
-  variable: '--font-sans',
+
+const montserrat = Montserrat({
   subsets: ['latin'],
-  // @todo: understand why extrabold (800) isn't being respected when explicitly specified in this weight array
-  // weight: ['500', '700', '800'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-montserrat',
 })
-const mono = IBM_Plex_Mono({
-  variable: '--font-mono',
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  height: 'device-height',
+  initialScale: 1,
+  maximumScale: 6,
+  userScalable: true,
+}
+
+export const metadata: Metadata = {
+  title: 'Evercrisp Apple  - Home',
+  description: 'Evercrisp Apple - Home',
+}
 
 export default async function RootLayout({
   children,
@@ -26,10 +36,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={`${mono.variable} ${sans.variable} ${serif.variable}`}
-    >
+    <html lang="en" className={`${literata.variable} ${montserrat.variable}`}>
       <body>{children}</body>
     </html>
   )

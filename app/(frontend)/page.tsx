@@ -15,12 +15,11 @@ export default async function IndexRoute() {
   if (draftMode().isEnabled) {
     return <HomePagePreview initial={initial} />
   }
-
   if (!initial.data) {
     return (
       <div className="text-center">
         You don&rsquo;t have a homepage yet,{' '}
-        <Link href={`${studioUrl}/structure/home`} className="underline">
+        <Link href={`${studioUrl}/desk/home`} className="underline">
           create one now
         </Link>
         !

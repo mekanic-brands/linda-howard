@@ -11,9 +11,10 @@ import { AccordionBlock } from './AccordionBlock'
 import { CtaBlock } from './CtaBlock'
 import { FullWidthContentBlock } from './FullWidthContentBlock'
 import GenericHeaderBlock from './GenericHeaderBlock'
+import LogoBlock from './LogoBlock'
 import { MorphologyBlock } from './MorphologyBlock'
 import { PairingBlock } from './PairingBlock'
-import LogoBlock from './LogoBlock'
+import { TestimonialBlock } from './TestimonalBlock'
 import TextBlock from './TextBlock'
 import { TwoColContentBlock } from './TwoColContentBlock'
 
@@ -87,7 +88,9 @@ export function CustomPortableText({
       logoBlock: ({ value }) => {
         return <LogoBlock {...value} />
       },
-     
+      testimonialBlock: ({ value }) => {
+        return <TestimonialBlock {...value} />
+      },
     },
   }
 

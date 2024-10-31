@@ -166,3 +166,13 @@ export interface IMarkerListProps {
     }[]
   }[]
 }
+
+
+export interface TestimonialPayload {
+  position: 'Left' | 'Right'
+  testimonialRow: {
+    title: string
+    quote: string
+    attribution: string
+  }[]
+}

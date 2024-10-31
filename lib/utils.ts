@@ -1,8 +1,11 @@
 import { type ClassValue, clsx } from 'clsx'
 import chunk from 'lodash/chunk'
+import find from 'lodash/find'
 import map from 'lodash/map'
 import split from 'lodash/split'
 import { twMerge } from 'tailwind-merge'
+
+import { TestimonialPayload } from '@/types'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -19,4 +22,11 @@ export const chunkProfileImages = <T>(profileImages: T[], limit = 7) => {
 export const getSanityImageDimension = (_ref: string) => {
   if (!_ref) return [0, 0]
   return map(split(split(_ref, '-')[2], 'x'), Number)
+}
+
+export const reorderTestimonials = (testimonials: TestimonialPayload[]) => {
+  const left = find(testimonials, { position: 'Left' })
+  const right = find(testimonials, { position: 'Right' })
+
+  return [left, right]
 }

@@ -18,12 +18,14 @@ import genericHeaderBlock from '@/sanity/schemas/objects/genericHeaderBlock'
 import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
+import testimonials from './sanity/schemas/documents/testimonials'
 import accordionBlock from './sanity/schemas/objects/accordionBlock'
 import ctaBlock from './sanity/schemas/objects/ctaBlock'
 import fullWidthContentBlock from './sanity/schemas/objects/fullWidthContentBlock'
 import logoBlock from './sanity/schemas/objects/logoBlock'
 import morphologyBlock from './sanity/schemas/objects/morphologyBlock'
 import pairingBlock from './sanity/schemas/objects/pairingBlock'
+import testimonialBlock from './sanity/schemas/objects/testimonialBlock'
 import twoColContentBlock from './sanity/schemas/objects/twoColContentBlock'
 
 const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Maia Evercrisp'
@@ -40,6 +42,7 @@ export default defineConfig({
       home,
       settings,
       // Documents
+      testimonials,
       page,
       // Objects
       ctaBlock,
@@ -51,6 +54,7 @@ export default defineConfig({
       morphologyBlock,
       fullWidthContentBlock,
       logoBlock,
+      testimonialBlock,
     ],
   },
   plugins: [

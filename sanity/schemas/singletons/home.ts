@@ -91,6 +91,10 @@ export default defineType({
         }),
         // Custom blocks
         defineArrayMember({
+          name: 'testimonialBlock',
+          type: 'testimonialBlock',
+        }),
+        defineArrayMember({
           name: 'genericHeaderBlock',
           type: 'genericHeaderBlock',
         }),

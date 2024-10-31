@@ -40,6 +40,17 @@ export const pagesBySlugQuery = groq`
   }
 `
 
+export const testimonialsQuery = groq`
+  *[_type == "testimonials"] {
+    position,
+    testimonialRow[]{
+      title, 
+      quote,
+      attribution
+    }
+  }
+`
+
 export const pagesQuery = groq`
   *[_type == "page"]{
     "slug": slug.current,

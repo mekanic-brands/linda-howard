@@ -58,6 +58,19 @@ ol li > ol {
   list-style: lower-alpha outside;
 }
 
+blockquote {
+  @apply lg:text-[24px] text-[18px] leading-[1.55] font-light text-green100;
+}
+
+blockquote:first-child:first-letter {
+  @apply text-red100 pr-[8px];
+  initial-letter: 3;
+}
+
+.content-block p {
+  margin-bottom: 0 !important;
+}
+
 @media (min-width: 1024px) {
   .container-large {
     max-width: 84.14vw;
@@ -77,5 +90,9 @@ ol li > ol {
     max-width: 100%;
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  blockquote:first-child:first-letter {
+    initial-letter: 2;
   }
 }

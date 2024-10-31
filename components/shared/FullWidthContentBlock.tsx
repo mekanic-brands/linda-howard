@@ -7,10 +7,16 @@ export function FullWidthContentBlock({
 }: {
   data: FullWidthContentBlockType
 }) {
-  const { content } = data
+  const { content, title } = data
   return (
-    <section className="container-large py-[54px] lg:py-[76px]">
-      <div className="text-center">
+    <section className="px-[20px] py-[54px] lg:py-[72px]">
+      <div className="lg:max-w-[52.21vw] w-full mx-auto">
+        <h2 className="mb-[20px] lg:mb-[50px]">
+          <CustomPortableText
+            paragraphClasses="text-gold100 lg:text-h2 text-[32px] leading-[1.125] text-center"
+            value={title}
+          />
+        </h2>
         <div className="content-block font-montserrat">
           {content && <CustomPortableText value={content} />}
         </div>

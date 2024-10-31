@@ -86,6 +86,7 @@ export interface TwoColContentBlockType {
 }
 export interface FullWidthContentBlockType {
   content?: PortableTextBlock[]
+  title: PortableTextBlock[]
 }
 export interface Button {
   title: string
@@ -166,7 +167,6 @@ export interface IMarkerListProps {
     }[]
   }[]
 }
-
 
 export interface TestimonialPayload {
   position: 'Left' | 'Right'

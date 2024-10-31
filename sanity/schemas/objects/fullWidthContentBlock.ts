@@ -6,6 +6,19 @@ export default defineType({
   type: 'object',
   fields: [
     defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          styles: [
+            {title: 'Normal', value: 'normal'},
+          ],
+          type: 'block',
+        }),
+      ],
+    }),
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'array',
@@ -13,10 +26,6 @@ export default defineType({
         defineArrayMember({
           styles: [
             { title: 'Normal', value: 'normal' },
-            { title: 'H2', value: 'h2' },
-            { title: 'H3', value: 'h3' },
-            { title: 'H4', value: 'h4' },
-            { title: 'H5', value: 'h5' },
             {title: 'DropCap', value: 'blockquote'}
           ],
           type: 'block',

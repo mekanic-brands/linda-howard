@@ -103,6 +103,10 @@ export default defineType({
           type: 'aboutBlock',
         }),
         defineArrayMember({
+          name: 'videoBlock',
+          type: 'videoBlock',
+        }),
+        defineArrayMember({
           name: 'emailSignUpBlock',
           type: 'emailSignUpBlock',
         }),

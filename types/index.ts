@@ -191,3 +191,10 @@ export interface IEmailSignUpProps {
   headline: string;
   latestResources: {resource: string}[]
 }
+
+export interface IVideoBlockProps {
+  title: string;
+  subtitle: string;
+  videos: {url: string}[]
+  actions: IButtonLinkProps[]
+}

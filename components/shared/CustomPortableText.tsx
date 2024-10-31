@@ -19,6 +19,7 @@ import { PairingBlock } from './PairingBlock'
 import { TestimonialBlock } from './TestimonalBlock'
 import TextBlock from './TextBlock'
 import { TwoColContentBlock } from './TwoColContentBlock'
+import { VideoBlock } from './VideoBlock'
 
 export function CustomPortableText({
   paragraphClasses,
@@ -71,6 +72,9 @@ export function CustomPortableText({
       },
       emailSignUpBlock: ({ value }) => {
         return <EmailSignUpBlock data={value} />
+      },
+      videoBlock: ({ value }) => {
+        return <VideoBlock data={value} />
       },
       accordionBlock: ({ value }) => {
         return <AccordionBlock data={value} />

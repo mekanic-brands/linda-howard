@@ -9,7 +9,7 @@ export function CtaBlock({ data }: { data: CtaBlockType }) {
       <div className="container-small py-[86px] lg:py-[120px]">
         <div className="text-center">
           {title && (
-            <h2 className="mb-4 font-literata lg:mb-[18px] text-gold100">
+            <h2 className="mb-4 font-tiempos lg:mb-[18px] text-gold100">
               {title}
             </h2>
           )}

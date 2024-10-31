@@ -58,7 +58,7 @@ export function MorphologyBlock({ data }: { data: MorphologyBlockType }) {
             )}
             {title && (
               <div className="lg:p-[76px] relative -mt-[72px] lg:mt-0 lg:absolute lg:-bottom-[152px] p-9 lg:rounded-[42px]  rounded-[12px] bg-darkRed100 w-full xl:w-[682px]">
-                <h2 className="font-literata text-white">
+                <h2 className="font-tiempos text-white">
                   {convertNewlinesToBreaks(title)}
                 </h2>
                 <h3 className="absolute -top-[32px] leading-none left-[50%] translate-x-[-50%] bg-white rounded-[12px] lg:rounded-[22px] p-4 lg:p-[22px] text-darkRed100">

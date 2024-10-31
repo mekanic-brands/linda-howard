@@ -99,6 +99,10 @@ export default defineType({
           type: 'ctaBlock',
         }),
         defineArrayMember({
+          name: 'aboutBlock',
+          type: 'aboutBlock',
+        }),
+        defineArrayMember({
           name: 'genericHeaderBlock',
           type: 'genericHeaderBlock',
         }),

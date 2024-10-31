@@ -14,7 +14,7 @@ export function PairingBlock({ data }: { data: PairingBlockType }) {
           <div className="xl:col-span-2 ">
             <div className="sticky left-0 top-[54px]">
               {title && (
-                <h2 className="mb-4 font-literata lg:mb-[22px] text-darkRed100  ">
+                <h2 className="mb-4 font-tiempos lg:mb-[22px] text-darkRed100  ">
                   {title}
                 </h2>
               )}

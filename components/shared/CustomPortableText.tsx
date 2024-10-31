@@ -7,6 +7,7 @@ import type { Image } from 'sanity'
 
 import ImageBox from '@/components/shared/ImageBox'
 
+import { AboutBlock } from './AboutBlock'
 import { AccordionBlock } from './AccordionBlock'
 import { CtaBlock } from './CtaBlock'
 import { FullWidthContentBlock } from './FullWidthContentBlock'
@@ -63,6 +64,9 @@ export function CustomPortableText({
       },
       ctaBlock: ({ value }) => {
         return <CtaBlock data={value} />
+      },
+      aboutBlock: ({ value }) => {
+        return <AboutBlock data={value} />
       },
       accordionBlock: ({ value }) => {
         return <AccordionBlock data={value} />

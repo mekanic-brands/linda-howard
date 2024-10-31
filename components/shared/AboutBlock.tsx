@@ -5,7 +5,6 @@ import { CustomPortableText } from './CustomPortableText'
 import SanityImage from './SanityImage'
 
 export function AboutBlock({ data }: { data: IAboutProps }) {
-  console.log(123123, data)
   const { title, content, buttonLink, image } = data ?? {}
   return (
     <section className="bg-gold100 relative">
@@ -27,8 +26,13 @@ export function AboutBlock({ data }: { data: IAboutProps }) {
           )}
         </div>
       </div>
-      <div className='lg:max-w-[42.1vw] hidden lg:block h-full w-full absolute bottom-[30px] right-0'>
-        <SanityImage image={image} alt="about" fill className='object-scale-down' />
+      <div className="lg:max-w-[42.1vw] hidden lg:block h-full w-full absolute bottom-[30px] right-0">
+        <SanityImage
+          image={image}
+          alt="about"
+          fill
+          className="object-scale-down"
+        />
       </div>
     </section>
   )

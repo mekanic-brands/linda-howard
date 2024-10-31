@@ -22,6 +22,7 @@ import testimonials from './sanity/schemas/documents/testimonials'
 import aboutBlock from './sanity/schemas/objects/aboutBlock'
 import accordionBlock from './sanity/schemas/objects/accordionBlock'
 import ctaBlock from './sanity/schemas/objects/ctaBlock'
+import emailSignUpBlock from './sanity/schemas/objects/emailSignUpBlock'
 import fullWidthContentBlock from './sanity/schemas/objects/fullWidthContentBlock'
 import logoBlock from './sanity/schemas/objects/logoBlock'
 import morphologyBlock from './sanity/schemas/objects/morphologyBlock'
@@ -48,6 +49,7 @@ export default defineConfig({
       // Objects
       ctaBlock,
       aboutBlock,
+      emailSignUpBlock,
       accordionBlock,
       twoColContentBlock,
       textBlock,

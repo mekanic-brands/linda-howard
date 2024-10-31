@@ -53,12 +53,10 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      content: 'content',
     },
-    prepare({ title, content }) {
+    prepare({ title }) {
       return {
         title,
-        subtitle: content,
       }
     },
   },

@@ -103,6 +103,10 @@ export default defineType({
           type: 'aboutBlock',
         }),
         defineArrayMember({
+          name: 'emailSignUpBlock',
+          type: 'emailSignUpBlock',
+        }),
+        defineArrayMember({
           name: 'genericHeaderBlock',
           type: 'genericHeaderBlock',
         }),

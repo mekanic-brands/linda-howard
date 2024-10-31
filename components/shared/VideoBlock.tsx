@@ -6,7 +6,6 @@ import Video from './Video'
 
 export function VideoBlock({ data }: { data: IVideoBlockProps }) {
   const { title, subtitle, actions, videos } = data ?? {}
-  console.log({ actions, videos })
   return (
     <section className="pt-[54px] lg:py-0 bg-gold10 lg:bg-white relative">
       <div className="px-[20px] flex flex-col lg:flex-row items-center justify-center lg:absolute lg:top-0 w-full gap-[32px] lg:gap-[50px]">

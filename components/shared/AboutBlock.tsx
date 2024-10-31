@@ -16,7 +16,7 @@ export function AboutBlock({ data }: { data: IAboutProps }) {
             </h2>
           )}
           <CustomPortableText
-            paragraphClasses="text-sm lg:text-[18px] text-white leading-[1.45]"
+            paragraphClasses="text-sm lg:text-[18px] text-white leading-[1.45] !mb-0"
             value={content}
           />
           {buttonLink && (

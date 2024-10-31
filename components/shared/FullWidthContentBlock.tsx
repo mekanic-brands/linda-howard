@@ -13,7 +13,7 @@ export function FullWidthContentBlock({
       <div className="lg:max-w-[52.21vw] w-full mx-auto">
         <h2 className="mb-[20px] lg:mb-[50px]">
           <CustomPortableText
-            paragraphClasses="text-gold100 lg:text-h2 text-[32px] leading-[1.125] lg:text-center"
+            paragraphClasses="text-gold100 lg:text-h2 text-[32px] leading-[1.125] lg:text-center !mb-0"
             value={title}
           />
         </h2>

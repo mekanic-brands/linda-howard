@@ -21,7 +21,7 @@ export function EmailSignUpBlock({ data }: { data: IEmailSignUpProps }) {
             <div>
               <Foreach data={latestResources}>
                 {(content) => (
-                  <p className="py-[18px] lg:text-[18px] border-b border-green100 font-helvetica font-bold text-green100 !mb-0">
+                  <p className="py-[18px] lg:text-[18px] border-b border-green100 font-helvetica font-bold text-green100 !mb-0 last:border-b-0">
                     {content?.resource}
                   </p>
                 )}

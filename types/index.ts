@@ -177,24 +177,38 @@ export interface TestimonialPayload {
   }[]
 }
 
-
 export interface IAboutProps {
-  title: string;
-  content: PortableTextBlock[],
+  title: string
+  content: PortableTextBlock[]
   image: Image
   buttonLink: IButtonLinkProps
 }
 
 export interface IEmailSignUpProps {
-  title: string;
-  subtitle: string;
-  headline: string;
-  latestResources: {resource: string}[]
+  title: string
+  subtitle: string
+  headline: string
+  latestResources: { resource: string }[]
 }
 
 export interface IVideoBlockProps {
-  title: string;
-  subtitle: string;
-  videos: {url: string}[]
+  title: string
+  subtitle: string
+  videos: { url: string }[]
   actions: IButtonLinkProps[]
+}
+
+export interface IIntroBlockProps {
+  title: string
+  subtitle: string
+  sectionOutline: {
+    headline: string
+    outlineItems: { outlineNumber: number; outlineLabel: string }[]
+  }
+  sectionContent: {
+    sectionNumber: number
+    sectionIntro: string
+    sectionExcerpt: PortableTextBlock[]
+    sectionLabel: string
+  }[]
 }

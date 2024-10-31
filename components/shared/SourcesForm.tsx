@@ -51,7 +51,7 @@ const SourcesForm = () => {
     ref.current.value = ''
     if (state.message === 'success') {
       toast({
-        title: 'Email submitted!',
+        title: 'Email sent successfully!',
       })
     } else {
       toast({

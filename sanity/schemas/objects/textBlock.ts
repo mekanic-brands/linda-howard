@@ -17,11 +17,11 @@ export default defineType({
       of: [
         defineArrayMember({
           styles: [
-            {title: 'Normal', value: 'normal'},
-            {title: 'H2', value: 'h2'},
-            {title: 'H3', value: 'h3'},
-            {title: 'H4', value: 'h4'},
-            {title: 'H5', value: 'h5'},
+            { title: 'Normal', value: 'normal' },
+            { title: 'H2', value: 'h2' },
+            { title: 'H3', value: 'h3' },
+            { title: 'H4', value: 'h4' },
+            { title: 'H5', value: 'h5' },
           ],
           type: 'block',
         }),
@@ -29,9 +29,9 @@ export default defineType({
     }),
   ],
   preview: {
-    prepare({  }) {
+    prepare({}) {
       return {
-        title: "Content",
+        title: 'Content',
       }
     },
   },

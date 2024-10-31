@@ -176,3 +176,11 @@ export interface TestimonialPayload {
     attribution: string
   }[]
 }
+
+
+export interface IAboutProps {
+  title: string;
+  content: PortableTextBlock[],
+  image: Image
+  buttonLink: IButtonLinkProps
+}

@@ -10,7 +10,7 @@ import SanityImage from './SanityImage'
 const LogoBlock = ({ logos, content }: ILogoProps) => {
   return (
     <div className="container-large py-[54px] lg:py-[76px]">
-      <h4 className="text-center mb-[36px] lg:mb-[65px] font-literata font-extrabold [line-height:24px] lg:[line-height:28.8px]">{content}</h4>
+      <h4 className="text-center mb-[36px] lg:mb-[65px] font-tiempos font-extrabold [line-height:24px] lg:[line-height:28.8px]">{content}</h4>
       <div className="flex lg:flex-row flex-wrap gap-y-[20px] gap-x-[20px] lg:gap-x-[54px] items-center justify-center">
         <Foreach data={logos}>
           {({ linkUrl, image }, { index }) => {

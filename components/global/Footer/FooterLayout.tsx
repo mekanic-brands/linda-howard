@@ -46,12 +46,12 @@ export default function Footer({ data }: FooterProps) {
               )}
             </div>
             <div className="flex-col lg:ml-auto">
-              <h4 className="font-extrabold  text-darkRed100 mb-[14px] lg:mb-4 font-literata">
+              <h4 className="font-extrabold  text-darkRed100 mb-[14px] lg:mb-4 font-tiempos">
                 Contact Information
               </h4>
               {consumersEmail && (
                 <div className="mb-[14px] lg:mb-4">
-                  <div className="text-small font-literata font-extrabold  leading-[16.8px]">
+                  <div className="text-small font-tiempos font-extrabold  leading-[16.8px]">
                     Consumers
                   </div>
                   <Link
@@ -64,7 +64,7 @@ export default function Footer({ data }: FooterProps) {
               )}
               {growersWebsite && (
                 <div>
-                  <div className="text-small font-literata font-extrabold leading-[16.8px]">
+                  <div className="text-small font-tiempos font-extrabold leading-[16.8px]">
                     Growers
                   </div>
                   <Link

@@ -19,6 +19,7 @@ import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
 import testimonials from './sanity/schemas/documents/testimonials'
+import aboutBlock from './sanity/schemas/objects/aboutBlock'
 import accordionBlock from './sanity/schemas/objects/accordionBlock'
 import ctaBlock from './sanity/schemas/objects/ctaBlock'
 import fullWidthContentBlock from './sanity/schemas/objects/fullWidthContentBlock'
@@ -46,6 +47,7 @@ export default defineConfig({
       page,
       // Objects
       ctaBlock,
+      aboutBlock,
       accordionBlock,
       twoColContentBlock,
       textBlock,

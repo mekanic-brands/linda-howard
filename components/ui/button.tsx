@@ -5,18 +5,18 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-[8px] text-[18px] ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 leading-none font-helvetica',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-[4px] text-[18px] ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 leading-none font-helvetica',
   {
     variants: {
       variant: {
         default:
-          'bg-primary text-white hover:bg-transparent hover:text-darkRed100  border-yellow100 hover:bg-yellow60',
+          'bg-primary text-white hover:bg-transparent hover:text-gold100 border border-gold100 hover:bg-transparent',
         destructive:
           'bg-accentYellow100 text-baseDark100 hover:bg-transparent hover:text-accentYellow100 border border-accentYellow100',
         outline:
           'border border-accentYellow100 text-accentYellow100 bg-transparent hover:bg-accentYellow100 hover:text-baseDark100',
         secondary:
-          'bg-red100 text-white hover:bg-transparent hover:text-baseDark100 border border-accentCyan100',
+          'bg-red100 text-white hover:bg-transparent hover:text-red100 border border-red100 hover:bg-transparent',
         ghost:
           'hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50',
         link: 'text-slate-900 underline-offset-4 hover:underline dark:text-slate-50',

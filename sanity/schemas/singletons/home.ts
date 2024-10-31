@@ -95,6 +95,10 @@ export default defineType({
           type: 'testimonialBlock',
         }),
         defineArrayMember({
+          name: 'ctaBlock',
+          type: 'ctaBlock',
+        }),
+        defineArrayMember({
           name: 'genericHeaderBlock',
           type: 'genericHeaderBlock',
         }),

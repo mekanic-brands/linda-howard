@@ -37,7 +37,7 @@ h5 {
 p,
 ul > li,
 ol > li {
-  @apply lg:text-p text-[18px] leading-[1.55] font-normal text-green100;
+  @apply lg:text-p text-[16px] leading-[1.55] font-normal text-green100;
 }
 
 ul,

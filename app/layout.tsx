@@ -2,18 +2,21 @@ import './globals.css'
 
 import { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
+
+import { Toaster } from '@/components/ui/toaster'
+
 const helvetica = localFont({
   src: [
     {
       path: '../public/fonts/Helvetica/Helvetica-Regular.ttf',
-      weight: '400'
+      weight: '400',
     },
     {
       path: '../public/fonts/Helvetica/Helvetica-Bold.ttf',
-      weight: '800'
+      weight: '800',
     },
   ],
-  variable: '--font-helvetica'
+  variable: '--font-helvetica',
 })
 
 const tiempos = localFont({
@@ -21,45 +24,45 @@ const tiempos = localFont({
     {
       path: '../public/fonts/Tiempos/TiemposHeadlineWeb-Light.woff',
       weight: '300',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../public/fonts/Tiempos/TiemposHeadlineWeb-LightItalic.woff',
       weight: '300',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../public/fonts/Tiempos/TiemposTextWeb-Regular.woff',
       weight: '400',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../public/fonts/Tiempos/TiemposTextWeb-RegularItalic.woff',
       weight: '400',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../public/fonts/Tiempos/TiemposTextWeb-Regular.woff',
       weight: '400',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../public/fonts/Tiempos/TiemposTextWeb-RegularItalic.woff',
       weight: '400',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../public/fonts/Tiempos/TiemposTextWeb-Medium.woff',
       weight: '500',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../public/fonts/Tiempos/TiemposTextWeb-MediumItalic.woff',
       weight: '500',
-      style: 'italic'
+      style: 'italic',
     },
   ],
-  variable: '--font-tiempos'
+  variable: '--font-tiempos',
 })
 
 export const viewport: Viewport = {
@@ -82,7 +85,12 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className={`${helvetica.variable} ${tiempos.variable}`}>
-      <body>{children}</body>
+      <body>
+        <>
+          {children}
+          <Toaster />
+        </>
+      </body>
     </html>
   )
 }

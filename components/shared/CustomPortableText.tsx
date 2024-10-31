@@ -10,6 +10,7 @@ import ImageBox from '@/components/shared/ImageBox'
 import { AboutBlock } from './AboutBlock'
 import { AccordionBlock } from './AccordionBlock'
 import { CtaBlock } from './CtaBlock'
+import { EmailSignUpBlock } from './EmailSignUpBlock'
 import { FullWidthContentBlock } from './FullWidthContentBlock'
 import GenericHeaderBlock from './GenericHeaderBlock'
 import LogoBlock from './LogoBlock'
@@ -67,6 +68,9 @@ export function CustomPortableText({
       },
       aboutBlock: ({ value }) => {
         return <AboutBlock data={value} />
+      },
+      emailSignUpBlock: ({ value }) => {
+        return <EmailSignUpBlock data={value} />
       },
       accordionBlock: ({ value }) => {
         return <AccordionBlock data={value} />

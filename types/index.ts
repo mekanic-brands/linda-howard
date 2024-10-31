@@ -184,3 +184,10 @@ export interface IAboutProps {
   image: Image
   buttonLink: IButtonLinkProps
 }
+
+export interface IEmailSignUpProps {
+  title: string;
+  subtitle: string;
+  headline: string;
+  latestResources: {resource: string}[]
+}

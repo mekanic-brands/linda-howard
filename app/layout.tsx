@@ -1,20 +1,65 @@
 import './globals.css'
 
 import { Metadata, Viewport } from 'next'
-import { Literata, Montserrat } from 'next/font/google'
-
-const literata = Literata({
-  subsets: ['latin'],
-  weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-  variable: '--font-literata',
+import localFont from 'next/font/local'
+const helvetica = localFont({
+  src: [
+    {
+      path: '../public/fonts/Helvetica/Helvetica-Regular.ttf',
+      weight: '400'
+    },
+    {
+      path: '../public/fonts/Helvetica/Helvetica-Bold.ttf',
+      weight: '800'
+    },
+  ],
+  variable: '--font-helvetica'
 })
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-  variable: '--font-montserrat',
+const tiempos = localFont({
+  src: [
+    {
+      path: '../public/fonts/Tiempos/TiemposHeadlineWeb-Light.woff',
+      weight: '300',
+      style: 'normal'
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposHeadlineWeb-LightItalic.woff',
+      weight: '300',
+      style: 'italic'
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-Regular.woff',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-RegularItalic.woff',
+      weight: '400',
+      style: 'italic'
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-Regular.woff',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-RegularItalic.woff',
+      weight: '400',
+      style: 'italic'
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-Medium.woff',
+      weight: '500',
+      style: 'normal'
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-MediumItalic.woff',
+      weight: '500',
+      style: 'italic'
+    },
+  ],
+  variable: '--font-tiempos'
 })
 
 export const viewport: Viewport = {
@@ -26,8 +71,8 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Evercrisp Apple  - Home',
-  description: 'Evercrisp Apple - Home',
+  title: 'Linda Howard - Home',
+  description: 'Linda Howard - Home',
 }
 
 export default async function RootLayout({
@@ -36,7 +81,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${literata.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${helvetica.variable} ${tiempos.variable}`}>
       <body>{children}</body>
     </html>
   )

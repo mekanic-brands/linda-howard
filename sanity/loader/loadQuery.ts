@@ -9,12 +9,14 @@ import {
   pagesBySlugQuery,
   pagesQuery,
   settingsQuery,
+  testimonialsQuery,
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
 import {
   HomePagePayload,
   PagePayload,
   SettingsPayload,
+  TestimonialPayload,
 } from '@/types'
 
 const serverClient = client.withConfig({
@@ -90,5 +92,13 @@ export function loadPages() {
     pagesQuery,
     {},
     { next: { tags: [`pages`] } },
+  )
+}
+
+export function loadTestimonials() {
+  return loadQuery<TestimonialPayload | null>(
+    testimonialsQuery,
+    {},
+    { next: { tags: ['home'] } },
   )
 }

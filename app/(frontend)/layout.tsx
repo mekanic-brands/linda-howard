@@ -1,6 +1,5 @@
 import '@/styles/index.css'
 
-import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata, Viewport } from 'next'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
@@ -29,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: homePage?.title
       ? {
           template: `%s | ${homePage.title}`,
-          default: homePage.title || 'Evercrisp Apple',
+          default: homePage.title || 'Linda Howard',
         }
       : undefined,
     description: homePage?.overview

@@ -3,7 +3,7 @@ import type { CtaBlock as CtaBlockType } from '@/types'
 import ButtonLinkBlock from './ButtonLinkBlock'
 
 export function CtaBlock({ data }: { data: CtaBlockType }) {
-  const { title, subtitle, buttonLink } = data
+  const { title, subtitle, buttonLink } = data ?? {}
   return (
     <section className="bg-lightRed100">
       <div className="container-large py-[86px] lg:py-[136px]">

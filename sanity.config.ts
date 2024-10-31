@@ -29,6 +29,7 @@ import morphologyBlock from './sanity/schemas/objects/morphologyBlock'
 import pairingBlock from './sanity/schemas/objects/pairingBlock'
 import testimonialBlock from './sanity/schemas/objects/testimonialBlock'
 import twoColContentBlock from './sanity/schemas/objects/twoColContentBlock'
+import videoBlock from './sanity/schemas/objects/videoBlock'
 
 const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Maia Evercrisp'
 
@@ -49,6 +50,7 @@ export default defineConfig({
       // Objects
       ctaBlock,
       aboutBlock,
+      videoBlock,
       emailSignUpBlock,
       accordionBlock,
       twoColContentBlock,

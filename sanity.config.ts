@@ -24,6 +24,7 @@ import accordionBlock from './sanity/schemas/objects/accordionBlock'
 import ctaBlock from './sanity/schemas/objects/ctaBlock'
 import emailSignUpBlock from './sanity/schemas/objects/emailSignUpBlock'
 import fullWidthContentBlock from './sanity/schemas/objects/fullWidthContentBlock'
+import introBlock from './sanity/schemas/objects/introBlock'
 import logoBlock from './sanity/schemas/objects/logoBlock'
 import morphologyBlock from './sanity/schemas/objects/morphologyBlock'
 import pairingBlock from './sanity/schemas/objects/pairingBlock'
@@ -52,6 +53,7 @@ export default defineConfig({
       aboutBlock,
       videoBlock,
       emailSignUpBlock,
+      introBlock,
       accordionBlock,
       twoColContentBlock,
       textBlock,

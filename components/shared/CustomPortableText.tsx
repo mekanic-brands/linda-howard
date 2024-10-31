@@ -13,6 +13,7 @@ import { CtaBlock } from './CtaBlock'
 import { EmailSignUpBlock } from './EmailSignUpBlock'
 import { FullWidthContentBlock } from './FullWidthContentBlock'
 import GenericHeaderBlock from './GenericHeaderBlock'
+import { IntroBlock } from './IntroBlock'
 import LogoBlock from './LogoBlock'
 import { MorphologyBlock } from './MorphologyBlock'
 import { PairingBlock } from './PairingBlock'
@@ -75,6 +76,9 @@ export function CustomPortableText({
       },
       videoBlock: ({ value }) => {
         return <VideoBlock data={value} />
+      },
+      introBlock: ({ value }) => {
+        return <IntroBlock data={value} />
       },
       accordionBlock: ({ value }) => {
         return <AccordionBlock data={value} />

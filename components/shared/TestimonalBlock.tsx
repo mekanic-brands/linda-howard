@@ -19,7 +19,7 @@ export async function TestimonialBlock({ title }) {
       <div className="container-large">
         <h2 className="mb-[20px] lg:mb-[50px]">
           <CustomPortableText
-            paragraphClasses="text-gold100 lg:text-h2 text-[32px] leading-[1.125]"
+            paragraphClasses="text-gold100 lg:text-h2 text-[32px] leading-[1.125] !mb-0"
             value={title}
           />
         </h2>

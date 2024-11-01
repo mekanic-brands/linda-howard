@@ -27,10 +27,6 @@ export interface PagePayload {
   _updatedAt?: string
 }
 
-export interface ExternalOptionBox {
-  label: string
-  url: string
-}
 export interface socialNetworks {
   title: string
   items: {
@@ -59,33 +55,7 @@ export interface CtaBlock {
   subtitle?: string
   buttonLink?: IButtonLinkProps
 }
-export interface Card {
-  label?: string
-  image?: Image
-}
-export interface PairingBlockType {
-  title?: string
-  subtitle?: string
-  cards?: Card[]
-}
-export interface MorphologyBlockType {
-  title?: string
-  leftApple?: Card
-  rightApple?: Card
-  centerApple?: Card
-}
-export interface item {
-  title?: string
-  content?: string
-}
-export interface AccordionBlock {
-  title?: string
-  items?: item[]
-}
-export interface TwoColContentBlockType {
-  contentLeft?: PortableTextBlock[]
-  contentRight?: PortableTextBlock[]
-}
+
 export interface FullWidthContentBlockType {
   content?: PortableTextBlock[]
   title: PortableTextBlock[]
@@ -99,11 +69,6 @@ export interface IVideoProps
   extends React.IframeHTMLAttributes<HTMLIFrameElement> {
   posterUrl?: Image
   content?: string
-}
-export interface IAboutHeaderProps {
-  title: string
-  content: string
-  video: IVideoProps
 }
 
 export interface IPlayButtonProps extends React.PropsWithChildren {
@@ -134,40 +99,9 @@ export interface IIntroProps {
   buttonLink: IButtonLinkProps
   video: IVideoProps
 }
-export interface ITextProps {
-  title: string
-  content: PortableTextBlock[]
-}
-export interface IGenericHeaderProps {
-  title: string
-  subtitle: string
-  featureImage: Image
-}
-
-export interface ILogoProps {
-  content: string
-  logos: {
-    linkUrl?: string
-    image: Image
-  }[]
-}
 
 export interface ISanityImageProps extends Omit<ImageProps, 'src'> {
   image: Image
-}
-
-export interface IMarkerListProps {
-  title: string
-  content: string
-  marketList: {
-    state: string
-    items: {
-      profileName: string
-      city: string
-      stateCode: string
-      zip: string
-    }[]
-  }[]
 }
 
 export interface TestimonialPayload {

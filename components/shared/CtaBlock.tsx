@@ -6,7 +6,7 @@ export function CtaBlock({ data }: { data: CtaBlockType }) {
   const { title, subtitle, buttonLink } = data ?? {}
   return (
     <section className="bg-gold10">
-      <div className="container-small py-[86px] lg:py-[120px]">
+      <div className="container-small py-[56px] lg:py-[120px]">
         <div className="text-center">
           {title && (
             <h2 className="mb-4 font-tiempos lg:mb-[18px] text-gold100">

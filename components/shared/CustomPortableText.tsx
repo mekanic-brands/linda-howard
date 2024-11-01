@@ -8,20 +8,13 @@ import type { Image } from 'sanity'
 import ImageBox from '@/components/shared/ImageBox'
 
 import { AboutBlock } from './AboutBlock'
-import { AccordionBlock } from './AccordionBlock'
 import { CtaBlock } from './CtaBlock'
 import { EmailSignUpBlock } from './EmailSignUpBlock'
 import { FullWidthContentBlock } from './FullWidthContentBlock'
-import GenericHeaderBlock from './GenericHeaderBlock'
-import { IntroBlock } from './IntroBlock'
-import LogoBlock from './LogoBlock'
-import { MorphologyBlock } from './MorphologyBlock'
-import { PairingBlock } from './PairingBlock'
-import { TestimonialBlock } from './TestimonalBlock'
-import TextBlock from './TextBlock'
-import { TwoColContentBlock } from './TwoColContentBlock'
-import { VideoBlock } from './VideoBlock'
 import { HeaderContentBlock } from './HeaderContentBlock'
+import { IntroBlock } from './IntroBlock'
+import { TestimonialBlock } from './TestimonalBlock'
+import { VideoBlock } from './VideoBlock'
 
 export function CustomPortableText({
   paragraphClasses,
@@ -84,29 +77,8 @@ export function CustomPortableText({
       introBlock: ({ value }) => {
         return <IntroBlock data={value} />
       },
-      accordionBlock: ({ value }) => {
-        return <AccordionBlock data={value} />
-      },
-      twoColContentBlock: ({ value }) => {
-        return <TwoColContentBlock data={value} />
-      },
       fullWidthContentBlock: ({ value }) => {
         return <FullWidthContentBlock data={value} />
-      },
-      pairingBlock: ({ value }) => {
-        return <PairingBlock data={value} />
-      },
-      morphologyBlock: ({ value }) => {
-        return <MorphologyBlock data={value} />
-      },
-      textBlock: ({ value }) => {
-        return <TextBlock {...value} />
-      },
-      genericHeaderBlock: ({ value }) => {
-        return <GenericHeaderBlock {...value} />
-      },
-      logoBlock: ({ value }) => {
-        return <LogoBlock {...value} />
       },
       testimonialBlock: ({ value }) => {
         return <TestimonialBlock {...value} />

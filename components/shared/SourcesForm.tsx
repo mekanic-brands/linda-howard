@@ -73,7 +73,7 @@ const SourcesForm = () => {
     >
       <Input
         placeholder="Your Email"
-        className="!outline-none [box-shadow:none!important] font-helvetica font-bold border-green100 text-green100 !px-[25px] !py-[25px] border-r-0 rounded-r-none placeholder:opacity-60 !bg-grey100 lg:!text-[18px]"
+        className="!outline-none [box-shadow:none!important] font-helvetica font-bold border-green100 text-green100 !px-[25px] !py-[25px] border-r-0 rounded-r-none placeholder:opacity-60 !bg-grey100 lg:!text-[18px] focus:!border-red100"
         name="email"
         type="email"
         ref={ref}

@@ -9,7 +9,7 @@ export function HeaderContentBlock({ data }: { data: IHeaderContentProps }) {
   return (
     <section className="bg-gold10 relative">
       <div>
-        <div className="container-large py-[54px] lg:py-[72px] flex flex-col lg:flex-row gap-[24px] items-center justify-between">
+        <div className="container-large py-[34px] lg:py-[72px] flex flex-col lg:flex-row gap-[24px] items-center justify-between">
           <div className="bg-gold20 rounded-[12px] p-[24px] space-y-[12px] lg:w-[31%] w-full">
             <h3 className="font-light text-gold100">
               {leftTestimonials?.title}

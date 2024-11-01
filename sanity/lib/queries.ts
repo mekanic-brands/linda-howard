@@ -6,16 +6,7 @@ export const homePageQuery = groq`
     overview,
     title,
     body[]{
-      ...,
-      resources[]->{
-        title,
-        link,
-        isPopular,
-        categories[]->{
-          name,
-          "slug": slug.current,
-        }
-      }
+      ...
     }
   }
 `
@@ -26,16 +17,7 @@ export const pagesBySlugQuery = groq`
     title,
     "slug": slug.current,
     body[]{
-      ...,
- "marketListItems": *[_type == "marketListingItems"] {
-    state,
-    items[]{
-      profileName,
-      city,
-      stateCode,
-      zip
-        }
-      }
+      ...
     }
   }
 `

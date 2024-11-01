@@ -85,36 +85,8 @@ export default defineType({
         }),
         // Custom blocks
         defineArrayMember({
-          name: 'genericHeaderBlock',
-          type: 'genericHeaderBlock',
-        }),
-        defineArrayMember({
           name: 'fullWidthContentBlock',
           type: 'fullWidthContentBlock',
-        }),
-        defineArrayMember({
-          name: 'pairingBlock',
-          type: 'pairingBlock',
-        }),
-        defineArrayMember({
-          name: 'morphologyBlock',
-          type: 'morphologyBlock',
-        }),
-        defineArrayMember({
-          name: 'textBlock',
-          type: 'textBlock',
-        }),
-        defineArrayMember({
-          name: 'accordionBlock',
-          type: 'accordionBlock',
-        }),
-        defineArrayMember({
-          name: 'twoColContentBlock',
-          type: 'twoColContentBlock',
-        }),
-        defineArrayMember({
-          name: 'logoBlock',
-          type: 'logoBlock',
         }),
         defineField({
           type: 'image',

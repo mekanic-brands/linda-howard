@@ -119,36 +119,8 @@ export default defineType({
           type: 'introBlock',
         }),
         defineArrayMember({
-          name: 'genericHeaderBlock',
-          type: 'genericHeaderBlock',
-        }),
-        defineArrayMember({
           name: 'fullWidthContentBlock',
           type: 'fullWidthContentBlock',
-        }),
-        defineArrayMember({
-          name: 'pairingBlock',
-          type: 'pairingBlock',
-        }),
-        defineArrayMember({
-          name: 'morphologyBlock',
-          type: 'morphologyBlock',
-        }),
-        defineArrayMember({
-          name: 'textBlock',
-          type: 'textBlock',
-        }),
-        defineArrayMember({
-          name: 'logoBlock',
-          type: 'logoBlock',
-        }),
-        defineArrayMember({
-          name: 'accordionBlock',
-          type: 'accordionBlock',
-        }),
-        defineArrayMember({
-          name: 'twoColContentBlock',
-          type: 'twoColContentBlock',
         }),
         defineField({
           type: 'image',

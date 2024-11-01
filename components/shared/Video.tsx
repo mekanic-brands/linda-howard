@@ -14,7 +14,7 @@ const Video = ({
   ...restProps
 }: IVideoProps) => {
   return src ? (
-    <div className="relative lg:max-w-[40.31vw] w-full aspect-video bg-black rounded-[12px] overflow-hidden">
+    <div className="relative lg:w-[40.31vw] lg:max-w-[610px] w-full aspect-video bg-black rounded-[12px] overflow-hidden">
       <iframe
         className={cn(
           'w-full h-full absolute top-0 left-0 transition duration-700',

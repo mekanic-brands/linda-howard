@@ -1,9 +1,6 @@
-import find from 'lodash/find'
-import get from 'lodash/get'
-import isEmpty from 'lodash/isEmpty'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
-import type { IMarkerListProps, PagePayload } from '@/types'
+import type { PagePayload } from '@/types'
 
 export interface PageProps {
   data: PagePayload | null

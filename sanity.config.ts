@@ -31,6 +31,7 @@ import pairingBlock from './sanity/schemas/objects/pairingBlock'
 import testimonialBlock from './sanity/schemas/objects/testimonialBlock'
 import twoColContentBlock from './sanity/schemas/objects/twoColContentBlock'
 import videoBlock from './sanity/schemas/objects/videoBlock'
+import headerContentBlock from './sanity/schemas/objects/headerContentBlock'
 
 const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Maia Evercrisp'
 
@@ -49,6 +50,7 @@ export default defineConfig({
       testimonials,
       page,
       // Objects
+      headerContentBlock,
       ctaBlock,
       aboutBlock,
       videoBlock,

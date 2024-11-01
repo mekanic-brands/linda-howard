@@ -63,6 +63,7 @@ export const settingsQuery = groq`
     ogImage,
     robots,
     socialNetworks,
-    mediaContact
+    mediaContact,
+    header
   }
 `

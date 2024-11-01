@@ -40,6 +40,10 @@ export interface socialNetworks {
 }
 
 export interface SettingsPayload {
+  header: {
+    buttonLink: IButtonLinkProps
+    logo: Image
+  }
   ogImage?: Image
   robots?: string
   socialNetworks?: socialNetworks
@@ -173,6 +177,11 @@ export interface TestimonialPayload {
     quote: string
     attribution: string
   }[]
+}
+
+export interface IHeaderContentProps {
+  testimonials: { title: string; quote: string; attribution: string }[]
+  bookCover: Image
 }
 
 export interface IAboutProps {

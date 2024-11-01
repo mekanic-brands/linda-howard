@@ -103,6 +103,10 @@ export default defineType({
           type: 'aboutBlock',
         }),
         defineArrayMember({
+          name: 'headerContentBlock',
+          type: 'headerContentBlock',
+        }),
+        defineArrayMember({
           name: 'videoBlock',
           type: 'videoBlock',
         }),

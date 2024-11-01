@@ -1,14 +1,13 @@
 import '@/styles/index.css'
 
 import type { Metadata, Viewport } from 'next'
+import { toPlainText } from 'next-sanity'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
-import { toPlainText } from 'next-sanity'
 import { Suspense } from 'react'
 
 import { Footer } from '@/components/global/Footer'
 import { Navbar } from '@/components/global/Navbar'
-import ThemeProvider from '@/components/provider/theme'
 import TopLoader from '@/components/shared/TopLoader'
 import { urlForOpenGraphImage } from '@/sanity/lib/utils'
 import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery'
@@ -52,7 +51,7 @@ export default async function IndexRoute({
   const initial = await loadSettings()
 
   return (
-    <ThemeProvider value={initial}>
+    <>
       <TopLoader />
       <div className="min-h-screen" id="mainWrapper">
         <Suspense>
@@ -66,6 +65,6 @@ export default async function IndexRoute({
         </Suspense>
       </div>
       {draftMode().isEnabled && <LiveVisualEditing />}
-    </ThemeProvider>
+    </>
   )
 }

@@ -14,7 +14,7 @@ export default function Footer({ data }: FooterProps) {
   const { socialNetworks = {}, mediaContact } = data ?? {}
   return (
     <footer className="w-full bg-red100 text-white">
-      <div className="container-large w-full lg:py-[75px] py-[55px] flex flex-col lg:flex-row lg:items-center lg:justify-between">
+      <div className="container-large w-full lg:py-[72px] py-[55px] flex flex-col lg:flex-row lg:items-center lg:justify-between">
         <div className='mb-[16px] lg:mb-[0]'>
           <p className="text-[18px] lg:text-[24px] text-white">
             {get(socialNetworks, 'title', '')}

@@ -1,36 +1,28 @@
-import Link from 'next/link'
+'use client'
 
-import { resolveHref } from '@/sanity/lib/utils'
-import type { MenuItem, SettingsPayload } from '@/types'
-
+import ButtonLinkBlock from '@/components/shared/ButtonLinkBlock'
+import SanityImage from '@/components/shared/SanityImage'
+import type { SettingsPayload } from '@/types'
+import get from 'lodash/get'
 interface NavbarProps {
   data: SettingsPayload
 }
-export default function Navbar(props: NavbarProps) {
-  const { data } = props
-  const menuItems = data?.menuItems || ([] as MenuItem[])
+
+export default function Navbar({ data }: NavbarProps) {
+  const { header } = data ?? {}
+
   return (
-    <div className="sticky top-0 z-10 flex flex-wrap items-center gap-x-5 bg-white/80 px-4 py-4 backdrop-blur md:px-16 md:py-5 lg:px-32">
-      {menuItems &&
-        menuItems.map((menuItem, key) => {
-          const href = resolveHref(menuItem?._type, menuItem?.slug)
-          if (!href) {
-            return null
-          }
-          return (
-            <Link
-              key={key}
-              className={`text-lg hover:text-black md:text-xl ${
-                menuItem?._type === 'home'
-                  ? 'font-extrabold text-black'
-                  : 'text-gray-600'
-              }`}
-              href={href}
-            >
-              {menuItem.title}
-            </Link>
-          )
-        })}
-    </div>
+    <header className="bg-gold10">
+      <div className="container-large flex py-[24px] lg:pt-[72px] lg:pb-0 justify-between items-center gap-4">
+        <SanityImage
+          image={get(header, 'logo', {})}
+          alt="header logo"
+          width={250}
+          height={35}
+          className='w-[180px] sm:w-[250px] aspect[250/35]'
+        />
+        <ButtonLinkBlock {...(get(header, 'buttonLink', {}) as any)} />
+      </div>
+    </header>
   )
 }

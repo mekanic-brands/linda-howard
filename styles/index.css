@@ -5,14 +5,14 @@ html {
 }
 
 p:not(:last-child) {
-  margin-bottom: 0.875rem;
+  margin-bottom: 1.5rem;
 }
-
+@media (max-width: 1024px) {
+  p:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
 ol,
 ul {
   margin-left: 1rem;
-}
-
-ol {
-  list-style-type: disc;
 }

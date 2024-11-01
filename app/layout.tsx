@@ -1,24 +1,82 @@
 import './globals.css'
 
-import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
+import { Metadata, Viewport } from 'next'
+import localFont from 'next/font/local'
 
-const serif = PT_Serif({
-  variable: '--font-serif',
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  weight: ['400', '700'],
+import { Toaster } from '@/components/ui/toaster'
+
+const helvetica = localFont({
+  src: [
+    {
+      path: '../public/fonts/Helvetica/Helvetica-Regular.ttf',
+      weight: '400',
+    },
+    {
+      path: '../public/fonts/Helvetica/Helvetica-Bold.ttf',
+      weight: '800',
+    },
+  ],
+  variable: '--font-helvetica',
 })
-const sans = Inter({
-  variable: '--font-sans',
-  subsets: ['latin'],
-  // @todo: understand why extrabold (800) isn't being respected when explicitly specified in this weight array
-  // weight: ['500', '700', '800'],
+
+const tiempos = localFont({
+  src: [
+    {
+      path: '../public/fonts/Tiempos/TiemposHeadlineWeb-Light.woff',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposHeadlineWeb-LightItalic.woff',
+      weight: '300',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-Regular.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-RegularItalic.woff',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-Regular.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-RegularItalic.woff',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-Medium.woff',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Tiempos/TiemposTextWeb-MediumItalic.woff',
+      weight: '500',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-tiempos',
 })
-const mono = IBM_Plex_Mono({
-  variable: '--font-mono',
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  height: 'device-height',
+  initialScale: 1,
+  maximumScale: 6,
+  userScalable: true,
+}
+
+export const metadata: Metadata = {
+  title: 'Linda Howard - Home',
+  description: 'Linda Howard - Home',
+}
 
 export default async function RootLayout({
   children,
@@ -26,11 +84,13 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={`${mono.variable} ${sans.variable} ${serif.variable}`}
-    >
-      <body>{children}</body>
+    <html lang="en" className={`${helvetica.variable} ${tiempos.variable}`}>
+      <body>
+        <>
+          {children}
+          <Toaster />
+        </>
+      </body>
     </html>
   )
 }

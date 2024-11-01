@@ -7,6 +7,15 @@ import type { Image } from 'sanity'
 
 import ImageBox from '@/components/shared/ImageBox'
 
+import { AboutBlock } from './AboutBlock'
+import { CtaBlock } from './CtaBlock'
+import { EmailSignUpBlock } from './EmailSignUpBlock'
+import { FullWidthContentBlock } from './FullWidthContentBlock'
+import { HeaderContentBlock } from './HeaderContentBlock'
+import { IntroBlock } from './IntroBlock'
+import { TestimonialBlock } from './TestimonalBlock'
+import { VideoBlock } from './VideoBlock'
+
 export function CustomPortableText({
   paragraphClasses,
   value,
@@ -46,13 +55,33 @@ export function CustomPortableText({
               alt={value.alt}
               classesWrapper="relative aspect-[16/9]"
             />
-            {value?.caption && (
-              <div className="font-sans text-sm text-gray-600">
-                {value.caption}
-              </div>
-            )}
+            {value?.caption && <div className="text-base">{value.caption}</div>}
           </div>
         )
+      },
+      ctaBlock: ({ value }) => {
+        return <CtaBlock data={value} />
+      },
+      aboutBlock: ({ value }) => {
+        return <AboutBlock data={value} />
+      },
+      headerContentBlock: ({ value }) => {
+        return <HeaderContentBlock data={value} />
+      },
+      emailSignUpBlock: ({ value }) => {
+        return <EmailSignUpBlock data={value} />
+      },
+      videoBlock: ({ value }) => {
+        return <VideoBlock data={value} />
+      },
+      introBlock: ({ value }) => {
+        return <IntroBlock data={value} />
+      },
+      fullWidthContentBlock: ({ value }) => {
+        return <FullWidthContentBlock data={value} />
+      },
+      testimonialBlock: ({ value }) => {
+        return <TestimonialBlock {...value} />
       },
     },
   }

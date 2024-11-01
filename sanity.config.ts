@@ -1,10 +1,11 @@
 'use client'
 /**
- * This config is used to set up Sanity Studio that's mounted on the `app/studio/[[...index]]/page.tsx` route
+ * This config is used to set up Sanity Studio that's mounted on the `app/studio/[[...index]]/Studio.tsx` route
  */
 
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
+import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { presentationTool } from 'sanity/presentation'
 import { structureTool } from 'sanity/structure'
 
@@ -15,9 +16,17 @@ import page from '@/sanity/schemas/documents/page'
 import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
-const title =
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
-  'Linda Howard'
+import testimonials from './sanity/schemas/documents/testimonials'
+import aboutBlock from './sanity/schemas/objects/aboutBlock'
+import ctaBlock from './sanity/schemas/objects/ctaBlock'
+import emailSignUpBlock from './sanity/schemas/objects/emailSignUpBlock'
+import fullWidthContentBlock from './sanity/schemas/objects/fullWidthContentBlock'
+import headerContentBlock from './sanity/schemas/objects/headerContentBlock'
+import introBlock from './sanity/schemas/objects/introBlock'
+import testimonialBlock from './sanity/schemas/objects/testimonialBlock'
+import videoBlock from './sanity/schemas/objects/videoBlock'
+
+const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Maia Evercrisp'
 
 export default defineConfig({
   basePath: studioUrl,
@@ -31,7 +40,17 @@ export default defineConfig({
       home,
       settings,
       // Documents
+      testimonials,
       page,
+      // Objects
+      headerContentBlock,
+      ctaBlock,
+      aboutBlock,
+      videoBlock,
+      emailSignUpBlock,
+      introBlock,
+      fullWidthContentBlock,
+      testimonialBlock,
     ],
   },
   plugins: [
@@ -48,6 +67,8 @@ export default defineConfig({
     }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
     singletonPlugin([home.name, settings.name]),
+    // Add an image asset source for Unsplash
+    unsplashImageAsset(),
     // Vision lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),

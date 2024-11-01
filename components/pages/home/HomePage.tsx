@@ -1,8 +1,6 @@
 import type { EncodeDataAttributeCallback } from '@sanity/react-loader'
-import Link from 'next/link'
 
-import { Header } from '@/components/shared/Header'
-import { resolveHref } from '@/sanity/lib/utils'
+import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import type { HomePagePayload } from '@/types'
 
 export interface HomePageProps {
@@ -10,14 +8,14 @@ export interface HomePageProps {
   encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
-export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
-  // Default to an empty object to allow previews on non-existent documents
-  const { overview = [], title = '' } = data ?? {}
+export function HomePage({ data }: HomePageProps) {
+  const { body } = data ?? {}
 
   return (
-    <div className="space-y-20">
-      {/* Header */}
-      {title && <Header centered title={title} description={overview} />}
+    <div>
+      {body && (
+        <CustomPortableText paragraphClasses="text-sm lg:text-p" value={body} />
+      )}
     </div>
   )
 }

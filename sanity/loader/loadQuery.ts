@@ -7,13 +7,16 @@ import { client } from '@/sanity/lib/client'
 import {
   homePageQuery,
   pagesBySlugQuery,
+  pagesQuery,
   settingsQuery,
+  testimonialsQuery,
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
 import {
   HomePagePayload,
   PagePayload,
   SettingsPayload,
+  TestimonialPayload,
 } from '@/types'
 
 const serverClient = client.withConfig({
@@ -81,5 +84,21 @@ export function loadPage(slug: string) {
     pagesBySlugQuery,
     { slug },
     { next: { tags: [`page:${slug}`] } },
+  )
+}
+
+export function loadPages() {
+  return loadQuery<PagePayload | null>(
+    pagesQuery,
+    {},
+    { next: { tags: [`pages`] } },
+  )
+}
+
+export function loadTestimonials() {
+  return loadQuery<TestimonialPayload | null>(
+    testimonialsQuery,
+    {},
+    { next: { tags: ['home'] } },
   )
 }

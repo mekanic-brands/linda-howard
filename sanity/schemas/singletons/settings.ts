@@ -1,76 +1,128 @@
 import { CogIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'settings',
   title: 'Settings',
   type: 'document',
-  icon: CogIcon,
+  icon: CogIcon as any,
   // Uncomment below to have edits publish automatically as you type
   // liveEdit: true,
   fields: [
     defineField({
-      name: 'menuItems',
-      title: 'Menu Item list',
-      description: 'Links displayed on the header of your site.',
-      type: 'array',
-      of: [
+      name: 'header',
+      title: 'Header',
+      type: 'object',
+      fields: [
         {
-          title: 'Reference',
-          type: 'reference',
-          to: [
+          name: 'logo',
+          title: 'Logo',
+          description: '',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: 'buttonLink',
+          title: 'ButtonLink',
+          type: 'object',
+          fields: [
             {
-              type: 'home',
+              name: 'href',
+              title: 'Href',
+              type: 'string',
             },
             {
-              type: 'page',
+              name: 'label',
+              title: 'Label',
+              type: 'string',
             },
           ],
         },
       ],
     }),
     defineField({
-      name: 'footer',
-      description:
-        'This is a block of text that will be displayed at the bottom of the page.',
-      title: 'Footer Info',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'block',
-          marks: {
-            annotations: [
-              {
-                name: 'link',
-                type: 'object',
-                title: 'Link',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'Url',
-                  },
-                ],
-              },
-            ],
-          },
-        }),
-      ],
-    }),
-    defineField({
       name: 'ogImage',
-      title: 'Open Graph Image',
+      title: 'Og Image',
+      description: '',
       type: 'image',
-      description: 'Displayed on social cards and search engine results.',
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: 'mediaContact',
+      title: 'Media Contact',
+      description: '',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        },
+        {
+          name: 'subtitle',
+          title: 'Subtitle',
+          type: 'string',
+        },
+        {
+          name: 'email',
+          title: 'Email',
+          type: 'string',
+        },
+      ],
+    }),
+    defineField({
+      name: 'socialNetworks',
+      title: 'Social Networks',
+      description: 'List of social network icons and links',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        },
+        {
+          name: 'items',
+          title: 'Items',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'icon',
+                  title: 'Icon',
+                  type: 'image',
+                  options: {
+                    hotspot: true,
+                  },
+                },
+                {
+                  name: 'link',
+                  title: 'Link',
+                  type: 'string',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: 'robots',
+      title: 'robots',
+      description: 'Robots.txt',
+      type: 'text',
     }),
   ],
   preview: {
     prepare() {
       return {
-        title: 'Menu Items',
+        title: 'Settings',
       }
     },
   },

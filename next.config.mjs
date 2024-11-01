@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const config = {
   images: {
+    dangerouslyAllowSVG: true,
     remotePatterns: [
       { hostname: 'cdn.sanity.io' },
+      { hostname: 'source.unsplash.com' },
     ],
   },
   typescript: {
@@ -20,6 +22,14 @@ const config = {
   },
   experimental: {
     taint: true,
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/robots.txt',
+        destination: '/api/robots',
+      },
+    ];
   },
 }
 

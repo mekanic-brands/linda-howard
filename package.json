@@ -1,5 +1,5 @@
 {
-  "name": "Linda Howard",
+  "name": "linda-howard",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -16,6 +16,11 @@
   },
   "dependencies": {
     "@next/env": "14.2.13",
+    "@next/third-parties": "14.2.13",
+    "@radix-ui/react-accordion": "^1.2.1",
+    "@radix-ui/react-dialog": "1.1.1",
+    "@radix-ui/react-slot": "1.1.0",
+    "@radix-ui/react-toast": "^1.2.2",
     "@sanity/demo": "2.0.0",
     "@sanity/icons": "3.4.0",
     "@sanity/image-url": "1.0.2",
@@ -24,16 +29,25 @@
     "@sanity/ui": "2.8.9",
     "@sanity/vision": "3.58.0",
     "@tailwindcss/typography": "0.5.15",
+    "axios": "^1.7.7",
+    "class-variance-authority": "0.7.0",
     "classnames": "2.5.1",
+    "clsx": "2.1.1",
     "date-fns": "4.1.0",
+    "lucide-react": "0.408.0",
     "next": "14.2.13",
     "next-sanity": "9.5.0",
+    "nextjs-toploader": "^3.0.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "rxjs": "7.8.1",
     "sanity": "3.58.0",
+    "sanity-plugin-asset-source-unsplash": "3.0.1",
     "server-only": "0.0.1",
-    "styled-components": "6.1.13"
+    "sharp": "0.33.4",
+    "styled-components": "6.1.13",
+    "tailwind-merge": "2.4.0",
+    "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
     "@types/react": "18.3.9",

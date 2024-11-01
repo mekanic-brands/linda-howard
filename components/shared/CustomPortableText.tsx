@@ -21,6 +21,7 @@ import { TestimonialBlock } from './TestimonalBlock'
 import TextBlock from './TextBlock'
 import { TwoColContentBlock } from './TwoColContentBlock'
 import { VideoBlock } from './VideoBlock'
+import { HeaderContentBlock } from './HeaderContentBlock'
 
 export function CustomPortableText({
   paragraphClasses,
@@ -70,6 +71,9 @@ export function CustomPortableText({
       },
       aboutBlock: ({ value }) => {
         return <AboutBlock data={value} />
+      },
+      headerContentBlock: ({ value }) => {
+        return <HeaderContentBlock data={value} />
       },
       emailSignUpBlock: ({ value }) => {
         return <EmailSignUpBlock data={value} />

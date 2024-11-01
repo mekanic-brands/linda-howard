@@ -10,13 +10,37 @@ export default defineType({
   // liveEdit: true,
   fields: [
     defineField({
-      name: 'logo',
-      title: 'Logo',
-      description: '',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: 'header',
+      title: 'Header',
+      type: 'object',
+      fields: [
+        {
+          name: 'logo',
+          title: 'Logo',
+          description: '',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: 'buttonLink',
+          title: 'ButtonLink',
+          type: 'object',
+          fields: [
+            {
+              name: 'href',
+              title: 'Href',
+              type: 'string',
+            },
+            {
+              name: 'label',
+              title: 'Label',
+              type: 'string',
+            },
+          ],
+        },
+      ],
     }),
     defineField({
       name: 'ogImage',

@@ -1,4 +1,5 @@
 'use client'
+import get from 'lodash/get'
 import { Loader2Icon } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { useFormState, useFormStatus } from 'react-dom'
@@ -51,13 +52,13 @@ const SourcesForm = () => {
     ref.current.value = ''
     if (state.message === 'success') {
       toast({
-        title: 'Email sent successfully!',
+        title: 'Email has been subscribed successfully!',
       })
     } else {
       toast({
         variant: 'destructive',
         title: 'Uh oh! Something went wrong.',
-        description: 'Email submission failed.',
+        description: get(state, 'detail', 'Email submission failed.'),
       })
     }
     setEmail('')

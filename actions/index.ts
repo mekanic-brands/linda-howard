@@ -29,14 +29,19 @@ export const emailSignUpAction = async (prevState: any, formData: FormData) => {
 
     const res = await response.json()
 
+    console.log(123123, res)
     if (res.status >= 400) {
-      throw new Error(res.detail)
+      throw new Error(
+        res?.title === 'Member Exists'
+          ? `${email} is already a list member`
+          : res?.detail || 'Email submission failed.',
+      )
     }
   } catch (err) {
     console.error(err)
-    return { message: 'error' }
+    return { message: 'error', detail: err.message || err }
   }
 
   revalidatePath('/')
-  return { message: 'success' }
+  return { message: 'success', detail: 'Email has been subscribed successfully!' }
 }

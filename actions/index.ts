@@ -29,7 +29,6 @@ export const emailSignUpAction = async (prevState: any, formData: FormData) => {
 
     const res = await response.json()
 
-    console.log(123123, res)
     if (res.status >= 400) {
       throw new Error(
         res?.title === 'Member Exists'

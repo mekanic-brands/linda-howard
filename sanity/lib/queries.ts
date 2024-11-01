@@ -60,22 +60,9 @@ export const pagesQuery = groq`
 
 export const settingsQuery = groq`
   *[_type == "settings"][0]{
-    footer,
-    menuItems[]->{
-      _type,
-      "slug": slug.current,
-      title
-    },
     ogImage,
-    evercrispAppleLogo,
-    footerLogo,
-    mobileLogo,
-    maiaInfo,
-    growersWebsite,
-    consumersEmail,
-    copyright,
     robots,
     socialNetworks,
-    ctaBlock,
+    mediaContact
   }
 `

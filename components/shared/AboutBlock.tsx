@@ -8,7 +8,7 @@ export function AboutBlock({ data }: { data: IAboutProps }) {
   const { title, content, buttonLink, image } = data ?? {}
   return (
     <section className="bg-gold100 relative">
-      <div className="container-large py-[54px] lg:py-[72px]">
+      <div className="container-small py-[54px] lg:py-[72px]">
         <div className="lg:max-w-[43.68vw] w-full">
           {title && (
             <h2 className="mb-4 font-tiempos lg:mb-[16px] text-white">

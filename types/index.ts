@@ -32,24 +32,22 @@ export interface ExternalOptionBox {
   url: string
 }
 export interface socialNetworks {
-  icon: Image
-  link: string
+  title: string
+  items: {
+    icon: Image
+    link: string
+  }[]
 }
 
 export interface SettingsPayload {
-  footer?: PortableTextBlock[]
-  menuItems?: MenuItem[]
   ogImage?: Image
   robots?: string
-  evercrispAppleLogo?: Image
-  maiaInfo?: string
-  footerLogo?: Image
-  mobileLogo?: Image
-  growersWebsite?: string
-  consumersEmail?: string
-  copyright?: string
-  socialNetworks?: socialNetworks[]
-  ctaBlock?: CtaBlock
+  socialNetworks?: socialNetworks
+  mediaContact: {
+    title: string
+    subtitle: string
+    email: string
+  }
 }
 
 export interface CtaBlock {

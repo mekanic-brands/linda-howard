@@ -38,7 +38,7 @@ export default function Footer({ data }: FooterProps) {
           </p>
           <Link
             href={`mailto:${get(mediaContact, 'email', '')}`}
-            className='className="text-[15px] font-helvetica !mb-[0] text-white"'
+            className='className="text-[15px] font-helvetica !mb-[0] text-white !underline'
           >
             {get(mediaContact, 'email', '')}
           </Link>

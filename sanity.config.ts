@@ -5,33 +5,26 @@
 
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
+import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { presentationTool } from 'sanity/presentation'
 import { structureTool } from 'sanity/structure'
-import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 
-import textBlock from '@//sanity/schemas/objects/textBlock'
 import { apiVersion, dataset, projectId, studioUrl } from '@/sanity/lib/api'
 import * as resolve from '@/sanity/plugins/resolve'
 import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
 import page from '@/sanity/schemas/documents/page'
-import genericHeaderBlock from '@/sanity/schemas/objects/genericHeaderBlock'
 import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
 import testimonials from './sanity/schemas/documents/testimonials'
 import aboutBlock from './sanity/schemas/objects/aboutBlock'
-import accordionBlock from './sanity/schemas/objects/accordionBlock'
 import ctaBlock from './sanity/schemas/objects/ctaBlock'
 import emailSignUpBlock from './sanity/schemas/objects/emailSignUpBlock'
 import fullWidthContentBlock from './sanity/schemas/objects/fullWidthContentBlock'
-import introBlock from './sanity/schemas/objects/introBlock'
-import logoBlock from './sanity/schemas/objects/logoBlock'
-import morphologyBlock from './sanity/schemas/objects/morphologyBlock'
-import pairingBlock from './sanity/schemas/objects/pairingBlock'
-import testimonialBlock from './sanity/schemas/objects/testimonialBlock'
-import twoColContentBlock from './sanity/schemas/objects/twoColContentBlock'
-import videoBlock from './sanity/schemas/objects/videoBlock'
 import headerContentBlock from './sanity/schemas/objects/headerContentBlock'
+import introBlock from './sanity/schemas/objects/introBlock'
+import testimonialBlock from './sanity/schemas/objects/testimonialBlock'
+import videoBlock from './sanity/schemas/objects/videoBlock'
 
 const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Maia Evercrisp'
 
@@ -56,14 +49,7 @@ export default defineConfig({
       videoBlock,
       emailSignUpBlock,
       introBlock,
-      accordionBlock,
-      twoColContentBlock,
-      textBlock,
-      genericHeaderBlock,
-      pairingBlock,
-      morphologyBlock,
       fullWidthContentBlock,
-      logoBlock,
       testimonialBlock,
     ],
   },

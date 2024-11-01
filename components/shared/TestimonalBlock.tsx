@@ -16,7 +16,7 @@ export async function TestimonialBlock({ title }) {
 
   return (
     <section className="bg-gold10 py-[54px] lg:py-[72px]">
-      <div className="container-large">
+      <div className="container-small">
         <h2 className="mb-[20px] lg:mb-[50px]">
           <CustomPortableText
             paragraphClasses="text-gold100 lg:text-h2 text-[32px] leading-[1.125] !mb-0"

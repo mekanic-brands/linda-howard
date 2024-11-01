@@ -63,7 +63,7 @@ const Intro = ({
           </Foreach>
         </div>
       </div>
-      <div className="bg-grey100 w-full flex-3 lg:px-[90px] lg:py-[72px] px-[20px] py-[24px]">
+      <div className="bg-grey100 w-full flex-3 lg:px-[120px] lg:py-[72px] px-[20px] py-[24px]">
         <p className="text-gold100 text-[18px] lg:text-[24px]">
           {get(currentSectionContent, 'sectionIntro', '')}
         </p>

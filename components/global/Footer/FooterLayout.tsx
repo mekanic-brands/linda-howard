@@ -1,109 +1,49 @@
 'use client'
-import Image from 'next/image'
-import Link from 'next/link'
+import get from 'lodash/get'
 
 import Foreach from '@/components/shared/Foreach'
-import { urlForImage } from '@/sanity/lib/utils'
+import SanityImage from '@/components/shared/SanityImage'
 import type { SettingsPayload } from '@/types'
-import { CtaBlock } from '@/components/shared/CtaBlock'
+import Link from 'next/link'
 
 interface FooterProps {
   data: SettingsPayload
 }
 
 export default function Footer({ data }: FooterProps) {
-  const {
-    copyright = '',
-    menuItems = [],
-    footerLogo = '',
-    growersWebsite = '',
-    consumersEmail = '',
-    maiaInfo = '',
-    socialNetworks = [],
-    ctaBlock = {},
-  } = data ?? {}
-  const footerLogoUrl = footerLogo ? urlForImage(footerLogo)?.url() || '' : ''
+  const { socialNetworks = {}, mediaContact } = data ?? {}
   return (
-    <div>
-      <CtaBlock data={ctaBlock} />
-      <footer className="w-full bg-white border-t-[6px] border-baseDark10">
-        <div className="container-large lg:py-[75px]  py-[55px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] xl:gap-20 2xl:gap-[18.5rem]">
-            <div className="flex-col">
-              {footerLogoUrl && (
-                <Link href={growersWebsite ? `https://${growersWebsite}` : `/`}>
-                  <Image
-                    width={211}
-                    height={80}
-                    src={footerLogoUrl}
-                    alt="Maia logo"
-                    className="m-auto lg:m-0"
-                  />
+    <footer className="w-full bg-red100 text-white">
+      <div className="container-large w-full lg:py-[75px] py-[55px] flex flex-col lg:flex-row lg:items-center lg:justify-between">
+        <div className='mb-[16px] lg:mb-[0]'>
+          <p className="text-[18px] lg:text-[24px] text-white">
+            {get(socialNetworks, 'title', '')}
+          </p>
+          <div className="flex lg:items-center gap-[18px]">
+            <Foreach data={get(socialNetworks, 'items', [])}>
+              {({ icon, link }) => (
+                <Link href={link}>
+                  <SanityImage width={52} height={52} image={icon} alt={link} className='w-[35px] h-[35px] lg:h-[52px] lg:w-[52px]'/>
                 </Link>
               )}
-              {maiaInfo && (
-                <p className="text-small mt-4 lg:mt-[22px]">{maiaInfo}</p>
-              )}
-            </div>
-            <div className="flex-col lg:ml-auto">
-              <h4 className="font-extrabold  text-darkRed100 mb-[14px] lg:mb-4 font-tiempos">
-                Contact Information
-              </h4>
-              {consumersEmail && (
-                <div className="mb-[14px] lg:mb-4">
-                  <div className="text-small font-tiempos font-extrabold  leading-[16.8px]">
-                    Consumers
-                  </div>
-                  <Link
-                    href={`mailto:${consumersEmail}`}
-                    className="text-small font-bold text-link"
-                  >
-                    {consumersEmail}
-                  </Link>
-                </div>
-              )}
-              {growersWebsite && (
-                <div>
-                  <div className="text-small font-tiempos font-extrabold leading-[16.8px]">
-                    Growers
-                  </div>
-                  <Link
-                    href={`https://${growersWebsite}`}
-                    className="text-small font-bold text-link"
-                  >
-                    {growersWebsite}
-                  </Link>
-                </div>
-              )}
-              {socialNetworks?.length > 0 && (
-                <div className="flex gap-[22px] mt-[14px] lg:mt-4'">
-                  <Foreach data={socialNetworks}>
-                    {(item) => {
-                      if (!item.link) {
-                        return null
-                      }
-                      return (
-                        <Link href={item.link || '#'}>
-                          <Image
-                            width={42}
-                            height={42}
-                            src={urlForImage(item.icon)?.url() || ''}
-                            alt="social network"
-                            className="bg-yellow100 transition duration-300 rounded-full hover:bg-yellow60"
-                          />
-                        </Link>
-                      )
-                    }}
-                  </Foreach>
-                </div>
-              )}
-            </div>
+            </Foreach>
           </div>
-          {copyright && (
-            <div className="text-small mt-5 lg:mt-8">{copyright}</div>
-          )}
         </div>
-      </footer>
-    </div>
+        <div className="lg:max-w-[391px] w-full">
+          <p className="text-[18px] lg:text-[24px] !mb-[8px] text-white">
+            {get(mediaContact, 'title', '')}
+          </p>
+          <p className="text-[15px] font-helvetica !mb-[0] text-white">
+            {get(mediaContact, 'subtitle', '')}
+          </p>
+          <Link
+            href={`mailto:${get(mediaContact, 'email', '')}`}
+            className='className="text-[15px] font-helvetica !mb-[0] text-white"'
+          >
+            {get(mediaContact, 'email', '')}
+          </Link>
+        </div>
+      </div>
+    </footer>
   )
 }

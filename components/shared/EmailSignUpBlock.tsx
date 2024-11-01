@@ -7,7 +7,7 @@ export function EmailSignUpBlock({ data }: { data: IEmailSignUpProps }) {
   const { title, subtitle, headline, latestResources } = data ?? {}
   return (
     <section className="bg-white">
-      <div className="container-large py-[86px] lg:py-[72px]">
+      <div className="container-small py-[86px] lg:py-[72px]">
         <div className="flex flex-col lg:flex-row gap-[20px] lg:gap-[50px]">
           <div className="flex-[1.3] lg:pr-[110px] lg:border-r border-green100 lg:py-[65px] mb-[20px] lg:mb-0">
             <h2 className="mb-[12px] font-tiempos text-gold100">{title}</h2>

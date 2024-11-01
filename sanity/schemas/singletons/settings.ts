@@ -1,5 +1,5 @@
 import { CogIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'settings',
@@ -31,35 +31,58 @@ export default defineType({
       name: 'mediaContact',
       title: 'Media Contact',
       description: '',
-      type: 'text',
-    }),
-    defineField({
-      name: 'email',
-      title: 'Email',
-      description: '',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        },
+        {
+          name: 'subtitle',
+          title: 'Subtitle',
+          type: 'string',
+        },
+        {
+          name: 'email',
+          title: 'Email',
+          type: 'string',
+        },
+      ],
     }),
     defineField({
       name: 'socialNetworks',
       title: 'Social Networks',
       description: 'List of social network icons and links',
-      type: 'array',
-      of: [
+      type: 'object',
+      fields: [
         {
-          type: 'object',
-          fields: [
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        },
+        {
+          name: 'items',
+          title: 'Items',
+          type: 'array',
+          of: [
             {
-              name: 'icon',
-              title: 'Icon',
-              type: 'image',
-              options: {
-                hotspot: true,
-              },  
-            },
-            {
-              name: 'link',
-              title: 'Link',
-              type: 'url',
+              type: 'object',
+              fields: [
+                {
+                  name: 'icon',
+                  title: 'Icon',
+                  type: 'image',
+                  options: {
+                    hotspot: true,
+                  },
+                },
+                {
+                  name: 'link',
+                  title: 'Link',
+                  type: 'string',
+                },
+              ],
             },
           ],
         },

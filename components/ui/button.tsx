@@ -14,7 +14,7 @@ const buttonVariants = cva(
         destructive:
           'bg-accentYellow100 text-baseDark100 hover:bg-transparent hover:text-accentYellow100 border border-accentYellow100',
         outline:
-          'border border-accentYellow100 text-accentYellow100 bg-transparent hover:bg-accentYellow100 hover:text-baseDark100',
+          'border border-gold100 text-gold100 bg-transparent hover:bg-gold100 hover:text-baseLight100',
         secondary:
           'bg-red100 text-white hover:bg-transparent hover:text-red100 border border-red100 hover:bg-transparent',
         ghost:
@@ -24,7 +24,7 @@ const buttonVariants = cva(
       size: {
         default:
           'lg:px-[32px] lg:py-[15px] lg:text-[18px] px-[16px] py-[14px] text-[16px] leading-none',
-        sm: 'lg:px-[22px] lg:py-[16px] lg:text-[18px] px-[16px] py-[14px] text-[16px] leading-none',
+        sm: 'lg:px-[18px] lg:py-[12px] lg:text-[16px] px-[14px] py-[12px] text-[14px] leading-none',
         lg: 'lg:px-[32px] lg:py-[22px] lg:text-[22px] px-[20px] py-[16px] text-[18px] leading-none',
         icon: 'h-10 w-10 leading-none',
       },

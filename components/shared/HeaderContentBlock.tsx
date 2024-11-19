@@ -1,7 +1,10 @@
-import type { IHeaderContentProps } from '@/types'
 import first from 'lodash/first'
 import last from 'lodash/last'
+
+import type { IHeaderContentProps } from '@/types'
+
 import SanityImage from './SanityImage'
+
 export function HeaderContentBlock({ data }: { data: IHeaderContentProps }) {
   const { testimonials, bookCover } = data ?? {}
   const leftTestimonials = first(testimonials)
@@ -39,7 +42,7 @@ export function HeaderContentBlock({ data }: { data: IHeaderContentProps }) {
             </p>
           </div>
         </div>
-        <div className="lg:h-[180px] 2xl:h-[260px] bg-white w-full" />
+        <div className="lg:h-[180px] 2xl:h-[200px] bg-white w-full" />
       </div>
     </section>
   )

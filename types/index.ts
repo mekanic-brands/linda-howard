@@ -38,7 +38,9 @@ export interface socialNetworks {
 export interface SettingsPayload {
   header: {
     buttonLink: IButtonLinkProps
+    secondaryButtonLink: IButtonLinkProps
     logo: Image
+    mobileLogo: Image
   }
   ogImage?: Image
   robots?: string
@@ -91,6 +93,10 @@ export interface IButtonLinkProps
     | 'ghost'
     | null
     | undefined
+  size?:
+    | 'default'
+    | 'sm'
+    | 'lg'
 }
 
 export interface IIntroProps {

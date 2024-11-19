@@ -24,13 +24,39 @@ export default defineType({
           },
         },
         {
+          name: 'mobileLogo',
+          title: 'Mobile Logo',
+          description: '',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+        {
           name: 'buttonLink',
-          title: 'ButtonLink',
+          title: 'Primary Button',
           type: 'object',
           fields: [
             {
               name: 'href',
-              title: 'Href',
+              title: 'Link',
+              type: 'string',
+            },
+            {
+              name: 'label',
+              title: 'Label',
+              type: 'string',
+            },
+          ],
+        },
+        {
+          name: 'secondaryButtonLink',
+          title: 'Secondary Button',
+          type: 'object',
+          fields: [
+            {
+              name: 'href',
+              title: 'Link',
               type: 'string',
             },
             {

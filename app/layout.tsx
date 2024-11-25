@@ -1,5 +1,6 @@
 import './globals.css'
 
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
@@ -91,6 +92,7 @@ export default async function RootLayout({
           <Toaster />
         </>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </html>
   )
 }

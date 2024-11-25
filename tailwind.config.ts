@@ -85,6 +85,7 @@ const config = {
       },
       boxShadow: {
         cardShadow: '0px 0px 40px 0px rgba(14, 44, 58, 0.12)', // Added custom card shadow
+        header: "0px 13px 24px 10px rgba(45, 30, 93, 0.14)",
       },
     },
   },

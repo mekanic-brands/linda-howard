@@ -25,8 +25,8 @@ export default defineType({
           fields: [
             {
               type: 'string',
-              name: 'url',
-              title: 'Url',
+              name: 'videoID',
+              title: 'Video ID',
             },
           ],
         },

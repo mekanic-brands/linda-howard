@@ -26,8 +26,8 @@ export function HeaderContentBlock({ data }: { data: IHeaderContentProps }) {
           </div>
 
           <div className="lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2">
-            <div className="relative w-[250px] lg:w-[28.88vw] 2xl:w-[400px] aspect-[437/732]">
-              <SanityImage image={bookCover} fill alt="book cover"  className='object-scale-down'/>
+            <div className="relative w-[250px] lg:w-[28.88vw] 2xl:w-[400px] aspect-[437/732] shadow-header">
+              <SanityImage image={bookCover} loading="eager" fill alt="book cover"  className='object-scale-down'/>
             </div>
           </div>
           <div className="bg-gold20 rounded-[12px] p-[24px] space-y-[12px] lg:w-[31%] w-full">

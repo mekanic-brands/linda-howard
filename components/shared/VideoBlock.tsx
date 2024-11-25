@@ -9,7 +9,7 @@ export function VideoBlock({ data }: { data: IVideoBlockProps }) {
   return (
     <section className="pt-[54px] lg:py-0 bg-gold10 lg:bg-white relative">
       <div className="px-[20px] flex flex-col lg:flex-row items-center justify-center lg:absolute lg:top-0 w-full gap-[32px] lg:gap-[50px]">
-        <Foreach data={videos}>{({ url }) => <Video src={url} />}</Foreach>
+        <Foreach data={videos}>{({ videoID }) => <Video videoid={videoID} />}</Foreach>
       </div>
       <div className="lg:h-[190px]" />
       <div className="py-[54px] lg:pb-[72px] bg-gold10 lg:pt-[190px]">

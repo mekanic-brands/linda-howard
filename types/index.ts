@@ -67,10 +67,8 @@ export interface Button {
   url: string
 }
 
-export interface IVideoProps
-  extends React.IframeHTMLAttributes<HTMLIFrameElement> {
-  posterUrl?: Image
-  content?: string
+export interface IVideoProps {
+  videoid?: string
 }
 
 export interface IPlayButtonProps extends React.PropsWithChildren {
@@ -141,7 +139,7 @@ export interface IEmailSignUpProps {
 export interface IVideoBlockProps {
   title: string
   subtitle: string
-  videos: { url: string }[]
+  videos: { videoID: string }[]
   actions: IButtonLinkProps[]
 }
 

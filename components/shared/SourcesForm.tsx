@@ -53,6 +53,7 @@ const SourcesForm = () => {
     if (state.message === 'success') {
       toast({
         title: 'Email has been subscribed successfully!',
+        description: 'Check your inbox for exclusive content & updates',
       })
     } else {
       toast({

@@ -1,5 +1,6 @@
 {
   "name": "linda-howard",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -43,7 +44,7 @@
     "rxjs": "7.8.1",
     "sanity": "3.58.0",
     "sanity-plugin-asset-source-unsplash": "3.0.1",
-    "sanity-plugin-media": "^3.0.2",
+    "sanity-plugin-media": "^2.3.2",
     "server-only": "0.0.1",
     "sharp": "0.33.4",
     "styled-components": "6.1.13",
